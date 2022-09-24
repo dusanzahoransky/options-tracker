@@ -1,8 +1,8 @@
-# Stock Analyst
+# Options Tracker
 
-BE for https://github.com/dusanzahoransky/stock-analyst-ui
+BE for https://github.com/dusanzahoransky/options-tracker-ui
 
-Backend services for ETF and stock data retrieved from multiple financial APIs. The data are enhanced with multiple calculated financial stats and stored in MongoDB to avoid fetching them again from external APIs.
+Backend services for Options Tracking App. After specifying a portfolio of stocks, it will track which of them are not covered by call options. Also, provides a tool for analysing covered CALL or PUT options buys. Calculates things such as price change needed for an option to be in the money, potential annualised percentage return from the options premium. It tracks all options traded for a specific stock position in a portfolio and total gains. 
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Running with default config -  unrestricted access at localhost:27017
 Otherwise, modify `application.properties`
 
 ```
-spring.data.mongodb.database=Stocks
+spring.data.mongodb.database=Options
 spring.data.mongodb.host=127.0.0.1
 spring.data.mongodb.port=27017
 ```
@@ -35,4 +35,4 @@ openexchangerates.client.appid=${openexchangerates-appid}
 
 ## Run
 
-Start SpringBoot app `com.github.dusanzahoransky.OptionsTracker.OptionsTrackerApplication`
+Start SpringBoot app `com.github.dusanzahoransky.optionstracker.OptionsTrackerApplication`
