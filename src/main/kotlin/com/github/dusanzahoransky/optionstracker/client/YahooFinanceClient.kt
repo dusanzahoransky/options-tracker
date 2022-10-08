@@ -2,6 +2,9 @@ package com.github.dusanzahoransky.optionstracker.client
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonTypeRef
+import com.github.dusanzahoransky.optionstracker.model.Ticker
+import com.github.dusanzahoransky.optionstracker.model.enums.Interval
+import com.github.dusanzahoransky.optionstracker.model.enums.Range
 import com.github.dusanzahoransky.optionstracker.model.yahoo.analysis.AnalysisResponse
 import com.github.dusanzahoransky.optionstracker.model.yahoo.chart.ChartResponse
 import com.github.dusanzahoransky.optionstracker.model.yahoo.etfstatistics.EtfStatisticsResponse
@@ -68,7 +71,7 @@ class YahooFinanceClient @Autowired constructor(
             ChartResponse::class.java,
             mapOf(
                 "ticker" to ticker.toYahooFormat(),
-                "interval" to interval.value,
+                "interval" to "1d",
                 "range" to range.value
             )
         ) ?: throw RuntimeException("Failed to load $ticker")
